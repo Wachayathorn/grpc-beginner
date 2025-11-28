@@ -1,0 +1,70 @@
+syntax = "proto3";
+
+package users.v1;
+option go_package = "github.com/Wachayathorn/grpc-beginner/users/pb;pb";
+
+import "google/protobuf/timestamp.proto";
+
+// UserService defines all operations related to user management
+service UserService {
+  rpc CreateUser (CreateUserRequest) returns (User);
+  rpc GetUser (GetUserRequest) returns (User);
+  rpc UpdateUser (UpdateUserRequest) returns (User);
+  rpc DeleteUser (DeleteUserRequest) returns (DeleteUserResponse);
+  rpc ListUsers (ListUsersRequest) returns (ListUsersResponse);
+}
+
+// User represents the main user entity
+message User {
+  int32 id = 1;
+  string name = 2;
+  string email = 3;
+  string phone = 4;
+  google.protobuf.Timestamp created_at = 5;
+  google.protobuf.Timestamp updated_at = 6;
+}
+
+// CreateUserRequest is used to create a new user
+message CreateUserRequest {
+  string name = 1;
+  string email = 2;
+  string phone = 3;
+}
+
+// GetUserRequest is used to retrieve a user by ID
+message GetUserRequest {
+  int32 id = 1;
+}
+
+// UpdateUserRequest is used to update user information
+message UpdateUserRequest {
+  int32 id = 1;
+  string name = 2;
+  string email = 3;
+  string phone = 4;
+}
+
+// DeleteUserRequest is used to delete a user
+message DeleteUserRequest {
+  int32 id = 1;
+}
+
+// DeleteUserResponse confirms the deletion
+message DeleteUserResponse {
+  bool success = 1;
+  string message = 2;
+}
+
+// ListUsersRequest is used to list users with pagination
+message ListUsersRequest {
+  int32 page = 1;
+  int32 page_size = 2;
+}
+
+// ListUsersResponse returns a list of users
+message ListUsersResponse {
+  repeated User users = 1;
+  int32 total = 2;
+  int32 page = 3;
+  int32 page_size = 4;
+}
