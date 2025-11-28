@@ -1,4 +1,4 @@
-.PHONY: proto clean
+.PHONY: proto clean deps run test
 
 proto:
 	@echo "Generating protobuf code..."
@@ -17,3 +17,12 @@ deps:
 	go get -u google.golang.org/grpc
 	go get -u google.golang.org/protobuf
 	@echo "✅ Dependencies installed!"
+
+run:
+	@echo "🚀 Starting Users gRPC Server..."
+	go run cmd/server/main.go
+
+test:
+	@echo "Running tests..."
+	go test -v ./...
+	@echo "✅ Tests completed!"
