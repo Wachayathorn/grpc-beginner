@@ -3,7 +3,7 @@ package grpc
 import (
 	"context"
 
-	pb "github.com/Wachayathorn/grpc-beginner/users/pb/users/service"
+	pb "github.com/Wachayathorn/grpc-beginner/users/pb/service"
 )
 
 // UserHandler implements the gRPC UserService interface
