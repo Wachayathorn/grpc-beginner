@@ -9,7 +9,7 @@ import (
 	"google.golang.org/grpc/reflection"
 
 	grpcHandler "github.com/Wachayathorn/grpc-beginner/users/internal/delivery/grpc"
-	pb "github.com/Wachayathorn/grpc-beginner/users/pb/service"
+	pb "github.com/Wachayathorn/grpc-beginner/users/pb/proto"
 )
 
 const (
