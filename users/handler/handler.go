@@ -24,15 +24,7 @@ func NewUserHandler(userBusiness business.Business) *UserHandler {
 func (h *UserHandler) ListUsers(ctx context.Context, req *pb.ListUsersRequest) (*pb.ListUsersResponse, error) {
 	res, err := h.userBusiness.ListUsersWithAddresses(ctx)
 	if err != nil {
-		return nil, err
+		return nil, fmt.Errorf("failed to list users: %w", err)
 	}
-
-	fmt.Printf("response : %v", res)
-
-	return &pb.ListUsersResponse{
-		Users:    []*pb.User{},
-		Total:    0,
-		Page:     req.Page,
-		PageSize: req.PageSize,
-	}, nil
+	return res.Users, nil
 }
