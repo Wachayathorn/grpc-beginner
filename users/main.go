@@ -8,7 +8,7 @@ import (
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/reflection"
 
-	grpcHandler "github.com/Wachayathorn/grpc-beginner/users/internal/delivery/grpc"
+	"github.com/Wachayathorn/grpc-beginner/users/handler"
 	pb "github.com/Wachayathorn/grpc-beginner/users/pb/proto"
 )
 
@@ -18,7 +18,7 @@ const (
 
 func main() {
 	// Create handler
-	userHandler := grpcHandler.NewUserHandler()
+	userHandler := handler.NewUserHandler()
 
 	// Create gRPC server
 	grpcServer := grpc.NewServer()
