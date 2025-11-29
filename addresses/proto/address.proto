@@ -1,0 +1,69 @@
+syntax = "proto3";
+
+package addresses.v1;
+option go_package = "github.com/Wachayathorn/grpc-beginner/addresses/pb/proto;pb";
+
+// AddressService defines all operations related to address management
+service AddressService {
+  rpc CreateAddress (CreateAddressRequest) returns (Address);
+  rpc GetAddress (GetAddressRequest) returns (Address);
+  rpc UpdateAddress (UpdateAddressRequest) returns (Address);
+  rpc DeleteAddress (DeleteAddressRequest) returns (DeleteAddressResponse);   
+  rpc ListAddresses (ListAddressesRequest) returns (ListAddressesResponse);
+} 
+
+// Address represents the main address entity
+message Address {
+  int32 id = 1;
+  string street = 2;
+  string city = 3;
+  string state = 4;
+  string zip_code = 5;
+}   
+
+// CreateAddressRequest is used to create a new address
+message CreateAddressRequest {
+  string street = 1;
+  string city = 2;
+  string state = 3;
+  string zip_code = 4;
+}
+
+// GetAddressRequest is used to retrieve an address by ID
+message GetAddressRequest {
+  int32 id = 1;
+}   
+
+// UpdateAddressRequest is used to update address information
+message UpdateAddressRequest {
+  int32 id = 1;
+  string street = 2;
+  string city = 3;
+  string state = 4;
+  string zip_code = 5;
+}
+
+// DeleteAddressRequest is used to delete an address
+message DeleteAddressRequest {
+  int32 id = 1;
+}   
+
+// DeleteAddressResponse confirms the deletion
+message DeleteAddressResponse {
+  bool success = 1;
+  string message = 2;
+}
+
+// ListAddressesRequest is used to list addresses with pagination
+message ListAddressesRequest {
+  int32 page = 1;
+  int32 page_size = 2;
+}   
+
+// ListAddressesResponse contains a list of addresses
+message ListAddressesResponse {
+  repeated Address addresses = 1;
+  int32 total = 2;    
+  int32 page = 3;    
+  int32 page_size = 4;
+}
