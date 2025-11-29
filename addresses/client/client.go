@@ -23,7 +23,6 @@ func New() Client {
 	if err != nil {
 		log.Fatalf("Failed to create client: %v", err)
 	}
-	defer conn.Close()
 	c := pb.NewAddressServiceClient(conn)
 	return &client{client: c}
 }
