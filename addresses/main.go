@@ -8,6 +8,7 @@ import (
 	"github.com/Wachayathorn/grpc-beginner/addresses/handler"
 	pb "github.com/Wachayathorn/grpc-beginner/addresses/pb/proto"
 	"google.golang.org/grpc"
+	"google.golang.org/grpc/reflection"
 )
 
 const (
@@ -16,6 +17,7 @@ const (
 
 func main() {
 	grpcServer := grpc.NewServer()
+	reflection.Register(grpcServer)
 
 	addressHandler := handler.NewAddressHandler()
 	pb.RegisterAddressServiceServer(grpcServer, addressHandler)

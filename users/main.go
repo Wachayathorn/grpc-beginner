@@ -8,6 +8,8 @@ import (
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/reflection"
 
+	"github.com/Wachayathorn/grpc-beginner/addresses/client"
+	"github.com/Wachayathorn/grpc-beginner/users/business"
 	"github.com/Wachayathorn/grpc-beginner/users/handler"
 	pb "github.com/Wachayathorn/grpc-beginner/users/pb/proto"
 )
@@ -17,25 +19,24 @@ const (
 )
 
 func main() {
-	// Create handler
-	userHandler := handler.NewUserHandler()
+	addressClient := client.New()
 
-	// Create gRPC server
+	userBusiness := business.New(addressClient)
+
+	userHandler := handler.NewUserHandler(userBusiness)
+
 	grpcServer := grpc.NewServer()
 
-	// Register service
 	pb.RegisterUserServiceServer(grpcServer, userHandler)
 
-	// Enable reflection for grpcurl
 	reflection.Register(grpcServer)
 
-	// Start listening
 	listener, err := net.Listen("tcp", port)
 	if err != nil {
 		log.Fatalf("Failed to listen: %v", err)
 	}
 
-	fmt.Printf("🚀 Users gRPC Server is running on port %s\n", port)
+	fmt.Printf("🚀 Users gRPC Server running on %s\n", port)
 
 	if err := grpcServer.Serve(listener); err != nil {
 		log.Fatalf("Failed to serve: %v", err)
