@@ -1,8 +1,8 @@
 package business
 
 import (
-	addresspb "github.com/Wachayathorn/grpc-beginner/addresses/pb/proto"
-	userpb "github.com/Wachayathorn/grpc-beginner/users/pb/proto"
+	addresspb "github.com/wachayathorn/grpc-beginner/addresses/pb/proto"
+	userpb "github.com/wachayathorn/grpc-beginner/users/pb/proto"
 )
 
 type ListUsersWithAddressesResponse struct {

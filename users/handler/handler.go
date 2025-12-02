@@ -4,8 +4,8 @@ import (
 	"context"
 	"fmt"
 
-	"github.com/Wachayathorn/grpc-beginner/users/business"
-	pb "github.com/Wachayathorn/grpc-beginner/users/pb/proto"
+	"github.com/wachayathorn/grpc-beginner/users/business"
+	pb "github.com/wachayathorn/grpc-beginner/users/pb/proto"
 )
 
 type UserHandler struct {

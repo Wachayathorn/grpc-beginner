@@ -309,7 +309,7 @@ make run
 
 ```bash
 # 1. Clone
-git clone https://github.com/Wachayathorn/grpc-beginner
+git clone https://github.com/wachayathorn/grpc-beginner
 cd grpc-beginner
 
 # 2. Start Addresses service

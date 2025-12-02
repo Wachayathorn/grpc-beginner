@@ -3,7 +3,7 @@ package handler
 import (
 	"context"
 
-	pb "github.com/Wachayathorn/grpc-beginner/addresses/pb/proto"
+	pb "github.com/wachayathorn/grpc-beginner/addresses/pb/proto"
 )
 
 type AddressHandler struct {

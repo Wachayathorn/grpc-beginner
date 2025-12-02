@@ -3,9 +3,9 @@ package business
 import (
 	"context"
 
-	"github.com/Wachayathorn/grpc-beginner/addresses/client"
-	addresspb "github.com/Wachayathorn/grpc-beginner/addresses/pb/proto"
-	userpb "github.com/Wachayathorn/grpc-beginner/users/pb/proto"
+	"github.com/wachayathorn/grpc-beginner/addresses/client"
+	addresspb "github.com/wachayathorn/grpc-beginner/addresses/pb/proto"
+	userpb "github.com/wachayathorn/grpc-beginner/users/pb/proto"
 )
 
 type Business interface {

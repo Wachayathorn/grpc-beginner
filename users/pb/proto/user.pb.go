@@ -7,12 +7,13 @@
 package pb
 
 import (
-	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
-	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
-	timestamppb "google.golang.org/protobuf/types/known/timestamppb"
 	reflect "reflect"
 	sync "sync"
 	unsafe "unsafe"
+
+	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
+	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
+	timestamppb "google.golang.org/protobuf/types/known/timestamppb"
 )
 
 const (
@@ -548,7 +549,7 @@ const file_proto_user_proto_rawDesc = "" +
 	"UpdateUser\x12\x1b.users.v1.UpdateUserRequest\x1a\x0e.users.v1.User\x12G\n" +
 	"\n" +
 	"DeleteUser\x12\x1b.users.v1.DeleteUserRequest\x1a\x1c.users.v1.DeleteUserResponse\x12D\n" +
-	"\tListUsers\x12\x1a.users.v1.ListUsersRequest\x1a\x1b.users.v1.ListUsersResponseB3Z1github.com/Wachayathorn/grpc-beginner/users/pb;pbb\x06proto3"
+	"\tListUsers\x12\x1a.users.v1.ListUsersRequest\x1a\x1b.users.v1.ListUsersResponseB3Z1github.com/wachayathorn/grpc-beginner/users/pb;pbb\x06proto3"
 
 var (
 	file_proto_user_proto_rawDescOnce sync.Once

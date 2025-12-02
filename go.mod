@@ -1,4 +1,4 @@
-module github.com/Wachayathorn/grpc-beginner
+module github.com/wachayathorn/grpc-beginner
 
 go 1.24.2
 

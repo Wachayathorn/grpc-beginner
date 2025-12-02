@@ -7,11 +7,12 @@
 package pb
 
 import (
-	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
-	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
 	reflect "reflect"
 	sync "sync"
 	unsafe "unsafe"
+
+	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
+	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
 )
 
 const (
@@ -552,7 +553,7 @@ const file_proto_address_proto_rawDesc = "" +
 	"GetAddress\x12\x1f.addresses.v1.GetAddressRequest\x1a\x15.addresses.v1.Address\x12J\n" +
 	"\rUpdateAddress\x12\".addresses.v1.UpdateAddressRequest\x1a\x15.addresses.v1.Address\x12X\n" +
 	"\rDeleteAddress\x12\".addresses.v1.DeleteAddressRequest\x1a#.addresses.v1.DeleteAddressResponse\x12X\n" +
-	"\rListAddresses\x12\".addresses.v1.ListAddressesRequest\x1a#.addresses.v1.ListAddressesResponseB=Z;github.com/Wachayathorn/grpc-beginner/addresses/pb/proto;pbb\x06proto3"
+	"\rListAddresses\x12\".addresses.v1.ListAddressesRequest\x1a#.addresses.v1.ListAddressesResponseB=Z;github.com/wachayathorn/grpc-beginner/addresses/pb/proto;pbb\x06proto3"
 
 var (
 	file_proto_address_proto_rawDescOnce sync.Once

@@ -5,8 +5,8 @@ import (
 	"log"
 	"net"
 
-	"github.com/Wachayathorn/grpc-beginner/addresses/handler"
-	pb "github.com/Wachayathorn/grpc-beginner/addresses/pb/proto"
+	"github.com/wachayathorn/grpc-beginner/addresses/handler"
+	pb "github.com/wachayathorn/grpc-beginner/addresses/pb/proto"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/reflection"
 )

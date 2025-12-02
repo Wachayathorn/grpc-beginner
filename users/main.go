@@ -8,10 +8,10 @@ import (
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/reflection"
 
-	"github.com/Wachayathorn/grpc-beginner/addresses/client"
-	"github.com/Wachayathorn/grpc-beginner/users/business"
-	"github.com/Wachayathorn/grpc-beginner/users/handler"
-	pb "github.com/Wachayathorn/grpc-beginner/users/pb/proto"
+	"github.com/wachayathorn/grpc-beginner/addresses/client"
+	"github.com/wachayathorn/grpc-beginner/users/business"
+	"github.com/wachayathorn/grpc-beginner/users/handler"
+	pb "github.com/wachayathorn/grpc-beginner/users/pb/proto"
 )
 
 const (
